@@ -19,6 +19,26 @@ func main() {
 }
 
 func main() {
+	day := 4
+	switch {
+	case day > 1:
+		fmt.Println("one")
+		fallthrough
+	case day < 2:
+		fmt.Println("two")
+		fallthrough
+	case day > 3:
+		fmt.Println("three")
+		fallthrough
+	case day < 4:
+		fmt.Println("four")
+		fallthrough
+	default:
+		fmt.Println("dive")
+	}
+}
+
+func main() {
 	day := 5
 	switch day {
 	case 1, 3, 5:
