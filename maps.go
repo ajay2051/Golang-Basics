@@ -11,7 +11,6 @@ func main() {
 }
 
 // Maps using make() function
-
 func main() {
 	var a = make(map[string]string) // The map is empty now
 	a["brand"] = "Ford"
