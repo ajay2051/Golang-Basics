@@ -2,6 +2,26 @@ package main
 
 import "fmt"
 
+type List[T any] struct {
+	items []T
+}
+
+func Map[T any, U any](l *List[T], fn func(T) U) *List[U] {
+	result := List[U]{}
+	for _, item := range l.items {
+		result.items = append(result.items, fn(item))
+	}
+	return &result
+}
+
+func (l *List[T]) Map[U any](fn func(T) U) *List[U] {
+	result := List[U]{}
+	for _, item := range l.items {
+		result.items = append(result.items, fn(item))
+	}
+	return &result
+}
+
 func add[T int | float64](x T, y T) T {
 	return x + y
 }
