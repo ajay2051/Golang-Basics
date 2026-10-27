@@ -28,6 +28,17 @@ func getFunc(x string) func(string) string {
 
 }
 
+// Variadic Functions
+// takes multiple parameters
+func sum(nums ...int) int {
+	total := 0
+
+	for _, num := range(nums) {
+		total = total + num
+	}
+	return total
+}
+
 func main() {
 	myMessage()
 	myFamily("Bob", 20)
@@ -37,4 +48,8 @@ func main() {
 	fmt.Println(a, b)
 	f1 := getFunc("ajay")
 	fmt.Println(f1("kumar"))
+	nums := []int{3, 4, 5, 6}
+	result := sum(nums...)
+	result_1 := sum(3, 4, 5, 6)
+	fmt.Println(result, result_1)
 }
