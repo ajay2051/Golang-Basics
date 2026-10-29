@@ -33,7 +33,7 @@ func getFunc(x string) func(string) string {
 func sum(nums ...int) int {
 	total := 0
 
-	for _, num := range(nums) {
+	for _, num := range nums {
 		total = total + num
 	}
 	return total
